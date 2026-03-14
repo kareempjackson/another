@@ -6,11 +6,7 @@ const nextConfig: NextConfig = {
       {
         source: '/(.*)',
         headers: [
-          {
-            // Allow Ghyst to embed this app in an iframe
-            key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://app.ghyst.io http://localhost:3000",
-          },
+          { key: 'Content-Security-Policy', value: "frame-ancestors 'self' https://*.ghyst.io https://*.vercel.app http://localhost:3000 http://localhost:3001" },
         ],
       },
     ];
